@@ -29,6 +29,12 @@ function is_admin() : bool {
     return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
 }
 
+function isSession() : void {
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+}
+
 function aos_animacion() : void {
     $efectos = [
         'fade-left',

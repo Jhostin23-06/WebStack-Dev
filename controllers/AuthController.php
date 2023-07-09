@@ -28,7 +28,8 @@ class AuthController {
                     if( password_verify($_POST['password'], $usuario->password) ) {
                         
                         // Iniciar la sesión
-                        session_start();    
+                        isSession();
+                           
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre;
                         $_SESSION['apellido'] = $usuario->apellido;
